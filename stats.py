@@ -3,7 +3,7 @@ def count_words(book_contents):
     return len(list_of_words)
 
 
-def character_count(book_contents):
+def char_count(book_contents):
     character_dict = {}
 
     for char in book_contents:
@@ -14,3 +14,15 @@ def character_count(book_contents):
             character_dict[formatted_char] = 1
 
     return character_dict
+
+
+def sort_on(items):
+    return items["num"]
+
+
+def sort_dict(dict):
+    list_of_dictionaries = []
+    for item in dict:
+        list_of_dictionaries.append({"char": item, "num": dict[item]})
+    list_of_dictionaries.sort(reverse=True, key=sort_on)
+    return list_of_dictionaries
